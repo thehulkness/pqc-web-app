@@ -10,7 +10,8 @@ This project showcases a simple web-based cryptography tool with key generation,
 - Generate a symmetric encryption key.
 - Encrypt plaintext messages.
 - Decrypt ciphertext messages.
-- Futuristic UI with gradient background and neon accents (main page only; result pages have a rendering issue).
+- Futuristic UI with gradient background and neon accents (main page only; result pages have a rendering issue).  
+  ![Main Page Screenshot](docs/main_page.png)
 - Error handling for invalid inputs or missing keys.
 
 ## Installation
