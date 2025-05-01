@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQC Web App - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">PQC App</a>
+        <div class="nav-links">
+            <a class="nav-link" href="{{ url_for('index') }}#home">Home</a>
+            <a class="nav-link" href="{{ url_for('index') }}#about">About</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="hero-section">
+            <h1>Result</h1>
+            <div class="card">
+                <div class="card-header">
+                    {{ action }} Result
+                </div>
+                <div class="card-body">
+                    {% if success %}
+                        <p class="result">{{ result }}</p>
+                    {% else %}
+                        <p class="error">{{ result }}</p>
+                    {% endif %}
+                    <a href="{{ url_for('index') }}" class="btn-custom">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>© 2025 PQC Web App | Built with <a href="https://flask.palletsprojects.com/" target="_blank">Flask</a></p>
+    </footer>
+</body>
+</html>
