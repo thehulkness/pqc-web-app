@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQC Web App</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">PQC App</a>
+        <div class="nav-links">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#about">About</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section" id="home">
+            <h1>Post-Quantum Cryptography Demo</h1>
+            <p>Secure your messages with advanced cryptography techniques. Generate keys, encrypt, and decrypt messages seamlessly.</p>
+        </div>
+
+        <!-- Generate Key Section -->
+        <div class="card">
+            <div class="card-header">
+                Generate Key
+            </div>
+            <div class="card-body">
+                <form action="/generate_keys" method="post">
+                    <button type="submit" class="btn-custom">Generate Key</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Encrypt Message Section -->
+        <div class="card">
+            <div class="card-header">
+                Encrypt Message
+            </div>
+            <div class="card-body">
+                <form action="/encrypt" method="post">
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message:</label>
+                        <input type="text" id="message" name="message" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn-custom">Encrypt</button>
+                </form>
+                <div id="encrypt-result"></div>
+            </div>
+        </div>
+
+        <!-- Decrypt Message Section -->
+        <div class="card">
+            <div class="card-header">
+                Decrypt Message
+            </div>
+            <div class="card-body">
+                <form action="/decrypt" method="post">
+                    <div class="form-group">
+                        <label for="ciphertext" class="form-label">Ciphertext:</label>
+                        <input type="text" id="ciphertext" name="ciphertext" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn-custom">Decrypt</button>
+                </form>
+                <div id="decrypt-result"></div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="hero-section" id="about">
+            <h2>About This Project</h2>
+            <p>This web application demonstrates the basics of post-quantum cryptography using the `cryptography` library in Python. It allows users to generate a symmetric key, encrypt messages, and decrypt them securely, with error handling and secure HTTP headers provided by Flask-Talisman.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 PQC Web App | Built with <a href="https://flask.palletsprojects.com/" target="_blank">Flask</a></p>
+    </footer>
+</body>
+</html>
